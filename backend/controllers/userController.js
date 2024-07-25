@@ -25,14 +25,14 @@ const loginUser = async(req,res) =>{
         })
     }catch(error){
         res.status(400).json({
-            message: err.message || err,
+            message: error.message || error,
             success: false
         });
     }     
 }
 
 const createToken = (id) => {
-    returnjwt.sign({id},process.env.JWT_SECRET)
+    return jwt.sign({id},process.env.JWT_SECRET)
 }
 
 //register user
@@ -71,7 +71,7 @@ const registerUser = async(req,res) =>{
 
     }catch(error){
         res.status(400).json({
-            message: err.message || err,
+            message: error.message || error,
             success: false
         });
     }

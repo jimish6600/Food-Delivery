@@ -5,7 +5,8 @@ import { Route, Routes } from 'react-router-dom'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import Cart from './pages/Cart/Cart'
 import Footer from './components/Footer/Footer'
-import LoginPopup from './components/LoginPopup.jsx/LoginPopup'
+import LoginPopup from './components/LoginPopup/LoginPopup'
+
 
 const App = () => {
 
