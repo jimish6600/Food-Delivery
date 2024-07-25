@@ -3,6 +3,10 @@ import bcrypt from 'bcrypt'
 import validator from 'validator'
 import userModel from '../models/userModel.js'
 
+
+const createToken = (id) => {
+    return jwt.sign({id},process.env.JWT_SECRET)
+}
 //login user
 const loginUser = async(req,res) =>{
     const {email,password} = req.body;
@@ -29,10 +33,6 @@ const loginUser = async(req,res) =>{
             success: false
         });
     }     
-}
-
-const createToken = (id) => {
-    return jwt.sign({id},process.env.JWT_SECRET)
 }
 
 //register user
