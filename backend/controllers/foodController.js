@@ -24,7 +24,7 @@ const addFood = async(req,res) =>{
         });
     }catch (error) {
         res.status(400).json({
-            message: err.message || err,
+            message: error.message || error,
             success: false
         });
     }
@@ -34,12 +34,12 @@ const listFood = async(req,res) =>{
     try{
         const foods = await foodModel.find({});
         res.json({
-            message: foods,
+            data: foods,
             success: true
         });
     }catch(error){
         res.status(400).json({
-            message: err.message || err,
+            message: error.message || error,
             success: false
         });
     }

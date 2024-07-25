@@ -11,7 +11,7 @@ const List = () => {
   const fetchList = async () => {
     try {
       const response = await axios.get(`${url}/api/food/list`);
-      response.data.success?setList(response.data.message):toast.error("Error fetching the list");
+      response.data.success?setList(response.data.data):toast.error("Error fetching the list");
     } catch (error) {
       toast.error("An error occurred while fetching the list");
     }
